@@ -4,8 +4,8 @@ hosts: all
 #become: yes
 #become_method: sudo
 #become_user: root
-gather_facts: yes
-connection: ssh
+#gather_facts: yes
+#connection: ssh
 tasks:   
    - name: Make the Swap inactive
      command: swapoff -a
