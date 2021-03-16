@@ -1,14 +1,14 @@
 
-hosts: users
-become: yes
+- hosts: users
+  become: yes
 
-vars_prompt:
+  vars_prompt:
 
    - name: "new_user"
      prompt: "Account need to be create in remote server."
      private: no
 
-tasks:
+  tasks:
     - name: creating the user {{ new_user }}.
       user:
         name: "{{ new_user }}"
