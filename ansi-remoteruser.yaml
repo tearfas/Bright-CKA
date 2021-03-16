@@ -1,5 +1,5 @@
 
-- hosts: users
+- hosts: all
   become: yes
 
   vars_prompt:
