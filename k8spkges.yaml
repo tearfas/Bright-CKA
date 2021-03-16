@@ -1,14 +1,12 @@
 
-hosts: "masters, workers"
-remote_user: ansible
-become: yes
-become_method: sudo
-become_user: root
+hosts: all
+#remote_user: ansible
+#become: yes
+#become_method: sudo
+#become_user: root
 gather_facts: yes
 connection: ssh
-  
-tasks:
-   
+tasks:   
    - name: Make the Swap inactive
      command: swapoff -a
 
