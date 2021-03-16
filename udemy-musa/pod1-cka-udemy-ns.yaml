@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: brightpod
+  namespace: cka-udemy
+  labels:
+    app: myapp
+    createdby: bright
+    type: front-end
+spec:
+  containers:
+    - name: bright-nginx
+      image: nginx
+
+    - name: bright-redis
+      image: redis

@@ -1,0 +1,21 @@
+#################################################################
+# Before this create a taint one of your nodes with the command #
+# kubectl taint nodes node-name spray=mortein:NoSchedule        #
+# ###############################################################
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: tolerate
+  labels:
+    topic: toleration
+    prereq: createtaintonanode
+spec:
+  containers:
+    - name: tor-web
+      image: nginx
+  tolerations:
+    - key: spray
+      operator: Equal
+      value: mortein
+      effect: NoSchedule

@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: web-app
+  labels:
+    app: App1
+    function: front-end
+  annotations:
+    email: tearfas@yahoo.com
+    number: 443 764 1106
+spec:
+  template:
+    metadata:
+      name: web-app-pod
+      labels:
+        app: pod1-app
+        use: webserver
+    spec:
+      containers:
+        - name: web-httpd
+          image: httpd
+  replicas: 3
+  selector:
+    matchLabels:
+      app: pod1-app
+      use: webserver

@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: rsclimt-pod
+  labels:
+    createdby: teargazz
+spec:
+  containers:
+    - name: rsclimt-cont
+      image: httpd
+      ports:
+        - containerPort: 8080
+      resources:
+        requests:
+          memory: "1Gi"
+          cpu: 1
+        limits:
+          memory: "2Gi"
+          cpu: 2

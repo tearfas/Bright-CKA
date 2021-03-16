@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nodeselect
+spec:
+  containers: 
+    - name: data-pros
+      image: redis
+  nodeSelector:
+    size: Large

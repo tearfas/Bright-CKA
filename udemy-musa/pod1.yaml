@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: brightpod
+  labels:
+    app: myapp
+    createdby: bright
+    type: front-end
+spec:
+  containers:
+    - name: bright-nginx
+      image: nginx
+
+    - name: bright-redis
+      image: redis

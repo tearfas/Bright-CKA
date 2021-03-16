@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploy1
+  labels:
+    createdby: Bright
+    type: frontend
+spec:
+  template:
+    metadata:
+      name: deploy1-pod
+      labels:
+        type: frontend-pod
+        createdon: valsday
+    spec:
+      containers:
+        - name: deploy-nginx
+          image: httpd
+  replicas: 4
+  selector:
+    matchLabels:
+      createdon: valsday

@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cka2
+spec:
+  containers:
+  - name: contthree
+    image: httpd
+  
+  - name: contwo
+    image: redis
+ 
+  - name: contone
+    image: sshd

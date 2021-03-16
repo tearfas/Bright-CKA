@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: myapp-replicaset
+  labels:
+    createdby: Bright
+    app: myapp
+spec:
+  template:
+    metadata:
+      name: myapp
+      labels:
+        app: myapp-rc
+        type: frontend
+    spec:
+      containers:
+        - name: bright-nginx
+          image: nginx
+  replicas: 8
+  selector:
+    matchLabels:
+      app: myapp-rc
